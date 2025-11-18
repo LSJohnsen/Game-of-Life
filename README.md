@@ -26,25 +26,4 @@ The code is structured into clear modules that separate simulation logic, render
 
 ---
 
-## Project Structure
 
-```text
-GAME_OF_LIFE/
-  IO/
-    IO.py                 # File handling for patterns and snapshots
-  lib/
-    keyboard.py           # Keyboard decorator and event dispatch
-    rules.py              # Game of Life update rules
-    utils.py              # Coordinate parsing, threading helpers, etc.
-  patterns/
-    current.gol           # Saved pattern (example)
-    preview.gol           # Preview pattern (example)
-  runs/
-    history.csv           # Snapshot history for simulator states
-  simulator/
-    board.py              # Board class: grid storage and drawing
-    sim.py                # Simulator class: main simulation logic
-  tests/
-    test_sim.py           # Tests for simulator logic
-    test_utils.py         # Tests for utilities (e.g. coordinate parsing)
-  main.py                 # Entry point for running the simulation
