@@ -51,7 +51,6 @@ def choose_snapshot_interactive(sim, csv_path="runs/history.csv", preview_path="
 
     print(f"{total-1} snapshots available (0-{total-1})")
 
-    # keep asking for valid snapshot index
     while True:
         try:
             index = int(input("Enter snapshot number to load: ").strip())
@@ -65,7 +64,7 @@ def choose_snapshot_interactive(sim, csv_path="runs/history.csv", preview_path="
     flat = np.array(rows[index], dtype=int)
     cells = flat.reshape((sim.rows, sim.columns)).tolist()
 
-    # ask until valid y/n
+    # valid yes no
     while True:
         save_ans = input("Save this snapshot to a preview file first? (y/n): ").strip().lower()
         if save_ans in ("y", "n"):

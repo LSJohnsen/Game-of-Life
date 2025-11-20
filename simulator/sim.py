@@ -10,6 +10,7 @@ PATTERNS_DIR = BASE_DIR / "patterns"
 SAVE_PATH = PATTERNS_DIR / "current.gol"
 SAVE_PATH_SNAP = PATTERNS_DIR / "snap.txt"
 
+# creates the gol simulation 
 class Simulator:
     def __init__(self, width, height, node_size):
         self.grid = Board(width, height, node_size)

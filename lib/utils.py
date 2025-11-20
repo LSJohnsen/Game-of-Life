@@ -21,7 +21,7 @@ def if_stopped(func):
 
 def set_coordinate(input, total_rows, total_columns):
 
-    # Check that input is a valid e. a1b2
+    # get coord as (a(num)b(num))
     reg = r"(a\d+|b\d+)"
     inputs = re.findall(reg, input.lower())
 
@@ -30,17 +30,17 @@ def set_coordinate(input, total_rows, total_columns):
     for i in inputs:
         letter = i[0] 
         num = int(i[1:])-1 # set back to zero index
-        #set row and column index based on a(row)/b(col) 
+    
         if letter == "a":
             row = num
         if letter == "b":
             column = num
 
-    # Require both row and column
+    # need both row and column
     if row is None or column is None:
         return None
 
-    # indexing is inside the board
+    # check bounds
     if row < 0 or row >= total_rows or column < 0 or column >= total_columns:
         return None
 
@@ -60,7 +60,7 @@ def apply_coordinate(sim, input):
 
 
 
-# Read inputs
+# Read input
 coord_queue = queue.Queue()
 def input_reader():
     while True:

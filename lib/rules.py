@@ -19,13 +19,13 @@ def neighbors_alive(grid, row, column, rows, cols):
         """
 
         live_neighbors = 0
-        neighbors = [(-1,-1), (-1,0), (-1,1), (0,-1), (0,1), (1,-1), (1,0), (1,1)] # location index around each node
+        neighbors = [(-1,-1), (-1,0), (-1,1), (0,-1), (0,1), (1,-1), (1,0), (1,1)] # index around each node
 
-        # loops over the possible locations around each node and mark if neighbor is alive
+        # loop over the possible locations around each node and mark if neighbor is alive
         for nodes in neighbors:  
             new_r = (row+nodes[0]) % rows
             new_c = (column+nodes[1]) % cols 
-            # modulo to wrap around edges so right side edge is connecteed to left side eedge 
+            # modulo to wrap around edges so top and bottom are neighbors etc
 
             if grid.cells[new_r][new_c] == 1:
                 live_neighbors += 1

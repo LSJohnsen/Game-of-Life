@@ -12,7 +12,7 @@ pygame.init()
 WIDTH = 800
 HEIGHT = 800
 NODE_SIZE = 80  
-state = {"fps": 5}
+state = {"fps": 5} 
 
 #Color  (Red, Green, Blue) 0-2555
 BLACK = (0, 0, 0)
@@ -40,7 +40,7 @@ def main():
                 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pos = pygame.mouse.get_pos() #tuple of the cursor x/y coordinates
-                row = pos[1] // NODE_SIZE
+                row = pos[1] // NODE_SIZE # index cell from px
                 column = pos[0] // NODE_SIZE
                 simulation.toggle_cell(row, column)
 
@@ -48,7 +48,7 @@ def main():
                 # handles keyboard inputs from keyboard.py
                 keyboard_event(simulation, event.key, state)
 
-            # thread loop that reads user inputs from terminal 
+            # thread reads user inputs from terminal 
             while not coord_queue.empty():
                 text = coord_queue.get()
                 if apply_coordinate(simulation, text):

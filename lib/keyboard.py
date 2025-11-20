@@ -24,7 +24,7 @@ def keyboard_event(simulation, key, state=None):
     if handler:
         handler(simulation, state)  # start_sim(simulation, state)
 
-# Keyboard functions
+# Keyboard functions (handling of fps state error fixed by gpt)
 
 @keyboard_in(pygame.K_RETURN)
 def start_sim(sim, state):
