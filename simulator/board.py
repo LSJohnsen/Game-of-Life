@@ -16,10 +16,11 @@ class Board:
                 pygame.draw.rect(window, color, (column * self.node_size, row * self.node_size, self.node_size - 1, self.node_size - 1)) # 1 pixel smaller for lines
 
     # randomly fill with living cells
+    # This code was modified from AI - small change in randomizer logic not really needed 
     def fill_random(self):  
         for row in range(self.rows):
             for column in range(self.columns):
-                self.cells[row][column] = int(random.random() < 0.25) # changed by gpt, not really needed 
+                self.cells[row][column] = int(random.random() < 0.25) 
 
     def clear(self):
         for row in range(self.rows):

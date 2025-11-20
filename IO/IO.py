@@ -27,13 +27,12 @@ def save_snapshot_csv(nodes, path="runs/history.csv"): #append a 1d array to a c
         writer = csv.writer(f)
         writer.writerow(flat)
 
-
+# reshape logic from VRX WAMV git repo mapping IO
 def load_snapshot_csv(index, rows, cols, path="runs/history.csv"):
     with open(path, newline="") as f:
         reader = list(csv.reader(f))
     flat = np.array(reader[index], dtype=int)
     return flat.reshape((rows, cols)) #back to 2d
-
 
 def choose_snapshot_interactive(sim, csv_path="runs/history.csv", preview_path="patterns/preview.gol"):
     p = Path(csv_path)
